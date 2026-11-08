@@ -38,4 +38,10 @@ def input_link(link:CreateCode,db:Session=Depends(get_db)):
 
         raise HTTPException(status_code=409,detail="link already exsits")
     return new_link     
-     
+
+
+@router.get("/getshortcode",response_model=CodeResponse)
+def show_codes(db:Session=Depends(get_db)):
+    return {"soper":True}     
+
+#kos
